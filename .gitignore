@@ -5,6 +5,11 @@
 # Compiled class file
 *.class
 
+### 사용자 이그노어 추가 ###
+### discord
+**/.idea/**
+
+
 # Log file
 *.log
 
