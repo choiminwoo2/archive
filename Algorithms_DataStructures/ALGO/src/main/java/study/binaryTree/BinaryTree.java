@@ -9,6 +9,7 @@ public class BinaryTree {
     private Node rootNode;
 
     public void insert(int value) {
+
         Node node = new Node(value);
         if (rootNode == null) {
             rootNode = node;
@@ -37,7 +38,36 @@ public class BinaryTree {
 
     }
 
+    public void insert2(int value) {
+
+        Node node = new Node(value);
+
+        if (rootNode == null) {
+            rootNode = node;
+            return;
+        }
+        Node current = rootNode;
+        while (true) {
+            if (value < current.getValue()) {
+                if (current.getLeft() == null) {
+                    current.setLeft(node);
+                } else {
+                    current = current.getLeft();
+                }
+            } else if (value > current.getValue()) {
+                if (current.getRight() == null) {
+                    current.setRight(node);
+                } else {
+                    current = current.getRight();
+                }
+            } else {
+                break;
+            }
+        }
+    }
+
     public void selectOrderTravle(OrderMode mode) {
+
         switch (mode) {
             case IN_ORDER:
                 inOrder(rootNode);
@@ -53,6 +83,7 @@ public class BinaryTree {
 
     // 전위 순회 => root -> left -> right 순서
     private void preOrder(Node node) {
+
         if (node != null) {
             System.out.print(node.getValue() + "\t");
             preOrder(node.getLeft());
@@ -62,6 +93,7 @@ public class BinaryTree {
 
     // 중위 순회 왼 -> 루트 -> 오른쪽 노드 순
     private void inOrder(Node node) {
+
         if (node != null) {
             inOrder(node.getLeft());
             System.out.print(node.getValue() + "\t");
@@ -71,6 +103,7 @@ public class BinaryTree {
 
     //후위 순회 왼 -> 오 -> 루 순
     private void postOrder(Node node) {
+
         if (node != null) {
             postOrder(node.getLeft());
             postOrder(node.getRight());

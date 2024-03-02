@@ -6,9 +6,8 @@
 *.class
 
 ### 사용자 이그노어 추가 ###
-### discord
-**/.idea/**
-
+.idea/
+Algorithms_DataStructures/
 
 # Log file
 *.log
