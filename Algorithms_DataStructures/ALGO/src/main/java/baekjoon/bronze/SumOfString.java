@@ -3,7 +3,6 @@ package baekjoon.bronze;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-
 public class SumOfString {
 
 		// 스트림 작성 테스트용
