@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop # db url
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    database-platform: org.hibernate.dialect.H2Dialect # 방언 설정
+  profiles:
+    active: test
+logging.level:
+  org.hibernate.SQL: debug
+# org.hibernate.type: trace #스프링 부트 2.x, hibernate5
+  org.hibernate.orm.jdbc.bind: trace #스프링 부트 3.x, hibernate

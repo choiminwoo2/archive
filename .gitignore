@@ -7,7 +7,7 @@
 
 ### 사용자 이그노어 추가 ###
 .idea/
-Algorithms_DataStructures/
+algorithms-dataStructures/
 
 # Log file
 *.log

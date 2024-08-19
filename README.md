@@ -5,6 +5,11 @@
 
 # 목차
 
-(typescript 자료구조, 알고리즘)[]
-(스프링 관련 이것저것 해본 것)[]
+* [여러 언어를 사용한 자료구조, 알고리즘]()
+* [스프링 MVC 기술](java/boot-thymeleaf-jpa/README.md)
+* [토비의 스프링부트](java/springcore/springstart/README.md)
+* [스프링 RestApi 관련 기술](java/springBootRestService/README.md)
+* [스프링 Redis](java/SpringData/redis/README.md)
+
+
 
