@@ -33,5 +33,7 @@ out/
 /nbdist/
 /.nb-gradle/
 
+/algorithms-dataStructures/
+
 ### VS Code ###
 .vscode/
