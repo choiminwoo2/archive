@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--/* 출력  */ -->
+<h1 th:text="${msg}"></h1>
+
+<!--/* 임시 변수 저장*/-->
+<div th:with="num 1 = ${10}, num2 = ${20}">
+  <h4 th:text="${num1 + num2}"></h4>
+</div>
+
+<!--/* [[${status.index} -- [[${str}]]]]  */ -->
+
+<!--/* 반복문  */ -->
+<th:block th:each="str: ${list}">
+  <li>[[$str]]</li>
+</th:block>
+<li th:each="str,status: ${list}" th:text="${str}"></li>
+
+</body>
+</html>
