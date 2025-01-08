@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    hikari:
+      connection-timeout: 5000
+      maximum-pool-size: 20
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3307/webdb
+    username: webuser
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  thymeleaf:
+    prefix: classpath:/templates/
+  servlet:
+    multipart:
+      enabled: true
+      location: C:\\upload
+      max-request-size: 30MB
+      max-file-size: 10MB
+  profiles:
+    active: test
+
+org:
+  ruu:
+    bootthymeleafjpa:
+      upload:
+        path: C:\\upload
+
+
+logging:
+  level:
+    org.ruu.bootthymeleafjpa: info
+    org.ruu: debug
+
+
