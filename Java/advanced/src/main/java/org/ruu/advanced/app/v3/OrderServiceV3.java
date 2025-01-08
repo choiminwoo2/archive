@@ -20,8 +20,8 @@ public class OrderServiceV3 {
     TraceStatusV1 status = null;
     //예외가 터져서 밑의 endr가 동작하지 않아 try, catch가 필요함
     try {
-      status = trace.begin("OrderServiceV3.request()");
-      orderRepository.save(itemId);
+      status = trace.begin("OrderControllerV1.request()");
+      orderRepository.save( itemId);
       trace.end(status);
     } catch (Exception e) {
       trace.exception(status, e);

@@ -20,7 +20,7 @@ public class OrderRepositoryV3 {
     TraceStatusV1 status = null;
     //예외가 터져서 밑의 endr가 동작하지 않아 try, catch가 필요함
     try {
-      status = trace.begin("OrderRepositoryV3.request()");
+      status = trace.begin("OrderRepositoryV1.request()");
       //저장 로직
       if("ex".equals(itemId)) {
         throw new IllegalStateException("예외 발생");
