@@ -1,4 +1,4 @@
-package org.ruu.advanced.strategy.code;
+package org.ruu.advanced.strategy.code.strategy;
 
 import lombok.extern.slf4j.Slf4j;
 
