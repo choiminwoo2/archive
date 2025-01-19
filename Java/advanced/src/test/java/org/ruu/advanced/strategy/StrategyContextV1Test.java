@@ -11,7 +11,7 @@ import org.ruu.advanced.template.code.SubClassLogic1;
 import org.ruu.advanced.template.code.SubClassLogic2;
 
 @Slf4j
-public class StrategyContextV1 {
+public class StrategyContextV1Test {
 
   @Test
   void strategtyV1() {
