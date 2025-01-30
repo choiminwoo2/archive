@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ResponseBody
 @Controller
 public class OrderControllerV2 {
-  private final OrderServiceV2 orderService;
+  private final OrderServiceV2 orderServiceV2;
 
   public OrderControllerV2(OrderServiceV2 orderService) {
-    this.orderService = orderService;
+    this.orderServiceV2 = orderService;
   }
 
   @GetMapping("/v2/request")
   String request(@RequestParam("itemId") String itemId){
-    orderService.orderItem(itemId);
+    //orderService.orderItem(itemId);
     return "ok";
   }
 
