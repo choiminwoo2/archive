@@ -55,3 +55,38 @@ fun main() {
     }
 
 ```
+
+# 4. 컬렉션
+
+* LIST, SET, MAP 의 컬렉션을 제공한다
+
+## 4.1 List 계열
+
+### 4.1.1 List
+
+* 불변 list을 만들 수 있다.
+* 재할당 불가능 및 변하지 않는 불변 데이터를 다루는데 사용
+```kotlin
+    //타입으로 생성 가능 없어도 생성가능.
+    val list = listOf<T>()
+```
+
+### 4.1.2 MutableList, ArrayList
+
+* add, remove 등 리스트의 데이터를 삭제하거나 추가가 가능함.
+* ArrayList 경우 자바에서 제공하는 ArrayList 자바 관련 API 사용한다면 이것을 사용하는 것을 더 권장하는 편
+
+```kotlin
+    var list1 = mutableListOf<String>()
+    var list2 = arrayListOf<String>()
+```
+
+## 4.2 SET
+
+* 중복을 허용하지 않는 자료 구조
+* 원래 SET은 순서를 보장하지 않지만, 코틀린은 어떤식으로 구성되있는지 모르겠.
+
+## 4.3 MAP
+
+* 키, 밸류 형식의 자료구조
+
