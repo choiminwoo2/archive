@@ -6,8 +6,11 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.config.Customizer
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
 
 @Configuration
@@ -30,10 +33,16 @@ class SecurityConfig {
         return http.build()
     }
 
+    // 6.1 버전부터 해당 방식으로 변경됨.
+    // authenticationConfiguration 은 PasswordEncoder와 UserDetailService를 제공함.
     @Bean
-    fun authticationManager(http: HttpSecurity) : AuthenticationManager {
-        return http.getSharedObject(AuthenticationManagerBuilder::class.java)
-            .userDetailsService(cu)
+    fun authenticationManager(authenticationConfiguration: AuthenticationConfiguration): AuthenticationManager {
+        return authenticationConfiguration.authenticationManager
+    }
+
+    @Bean
+    fun passwordEncoder(): PasswordEncoder {
+        return BCryptPasswordEncoder()
     }
 
 }
