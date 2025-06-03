@@ -1,12 +1,14 @@
-package org.ruu.kt.todo.auth
+package org.ruu.kt.todo.auth.service
 
+import org.ruu.kt.todo.auth.AuthRepository
+import org.ruu.kt.todo.auth.CustomUserDetails
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
 
-@Service
-class CustomUserDetailsService(
+
+open class CustomUserDetailsService(
     private val userRepository : AuthRepository
 ) : UserDetailsService {
 
