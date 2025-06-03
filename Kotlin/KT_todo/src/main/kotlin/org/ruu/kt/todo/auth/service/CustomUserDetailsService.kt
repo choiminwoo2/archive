@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
 
 
-open class CustomUserDetailsService(
+class CustomUserDetailsService(
     private val userRepository : AuthRepository
 ) : UserDetailsService {
 
