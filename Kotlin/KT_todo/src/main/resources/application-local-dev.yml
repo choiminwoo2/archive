@@ -1,0 +1,23 @@
+spring:
+  config:
+    activate:
+      on-profile: local-dev
+    import: classpath:application-db.yml
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/${database.name}?serverTimezone=UTC&characterEncoding=UTF-8
+#    username: ${database.username}
+#    password: ${database.password}
+#
+#  datasource:
+#    hikari:
+#      connection-timeout: 5000
+#      maximum-pool-size: 5
+#      keepalive-time: 30000
+#      validation-timeout: 1000
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true

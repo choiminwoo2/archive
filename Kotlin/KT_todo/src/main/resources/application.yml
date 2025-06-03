@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.default_batch_fetch_size: 100
+
+  servlet:
+    multipart:
+      enabled: true
+      location: C:\\upload
+      max-request-size: 30MB
+      max-file-size: 10MB
+
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+  config:
+    import:
+          - classpath:application-local.yml
+          - classpath:application-local-dev.yml
+
+logging:
+  level:
+    org.ruu.developerkorea: info
+    org.ruu: debug

@@ -23,8 +23,7 @@ class Todo(
 
 ) : BaseEntity() {
 
-    fun getContent() = content
-    fun setContent(content: String) {
+    fun addContent(content: String) {
         this.content = content
     }
 }

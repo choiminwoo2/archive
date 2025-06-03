@@ -33,6 +33,8 @@ out/
 /nbdist/
 /.nb-gradle/
 
+# DB 설정 파일만 무시
+application-db.yml
 ### VS Code ###
 .vscode/
 
