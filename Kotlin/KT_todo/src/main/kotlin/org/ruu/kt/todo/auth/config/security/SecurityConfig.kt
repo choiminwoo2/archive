@@ -1,6 +1,7 @@
 package org.ruu.kt.todo.auth.config.security
 
 import org.ruu.kt.todo.auth.CustomUserDetails
+import org.ruu.kt.todo.auth.CustomUserDetailsService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.AuthenticationManager
@@ -15,9 +16,7 @@ import org.springframework.security.web.SecurityFilterChain
 
 @Configuration
 @EnableWebSecurity
-class SecurityConfig {
-
-    private val customUserDetailsService : CustomUserDetails
+class SecurityConfig{
 
     @Bean
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
