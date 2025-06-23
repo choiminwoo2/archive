@@ -1,5 +1,6 @@
 package org.ruu.kt.todo.todos.controller
 
+import org.ruu.kt.todo.todos.service.TodoService
 import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.web.bind.annotation.GetMapping
@@ -8,7 +9,12 @@ import org.springframework.web.bind.annotation.RestController
 import java.security.Principal
 
 @RestController
-class TodoController {
+class TodoController(
+    private val todoService: TodoService
+) {
+
+
+
 
     @GetMapping()
     fun getTodo(
