@@ -9,7 +9,7 @@ class TodoService(
     private val todoRepository: TodoRepository
 ) {
 
-    fun getTodosByUserId( userId : String ) : List<TodoDTO>{
+    fun getTodosByUserName( userName : String ) : List<TodoDTO>{
         //리스트화
         return mutableListOf();
     }
