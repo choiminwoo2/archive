@@ -38,6 +38,7 @@ class Todo(
     fun getTitle(): String = this.title
     fun getContent(): String? = this.content
     fun getTodoStatus(): TodoStatus = this.todoStatus
+    fun getPriority(): Priority = this.priority
 
     // 비즈니스 로직
     fun updateTitle(newTitle: String) {
@@ -52,4 +53,9 @@ class Todo(
     fun changeStatus(newStatus: TodoStatus) {
         this.todoStatus = newStatus
     }
+
+    fun changePriority(newPriority: Priority) {
+        this.priority = newPriority
+    }
+
 }
