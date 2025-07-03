@@ -3,15 +3,16 @@ package todo
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.BDDMockito.given
 import org.ruu.kt.todo.todos.controller.TodoController
 import org.ruu.kt.todo.todos.dto.TodoDTO
 import org.ruu.kt.todo.todos.service.TodoService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs
-import org.springframework.boot.test.autoconfigure.web.servlet.MockMvcBuilderCustomizer
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.restdocs.RestDocumentationContextProvider
 import org.springframework.restdocs.RestDocumentationExtension
+import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*
 import org.springframework.restdocs.payload.PayloadDocumentation.*
 import org.springframework.security.test.context.support.WithMockUser
@@ -22,8 +23,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean
 import org.springframework.web.context.WebApplicationContext
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration
-import org.springframework.restdocs.mockmvc.MockMvcRestDocumentationConfigurer
-import org.springframework.test.web.servlet.setup.DefaultMockMvcBuilder
+
 
 @WebMvcTest(TodoController::class)
 @AutoConfigureRestDocs
