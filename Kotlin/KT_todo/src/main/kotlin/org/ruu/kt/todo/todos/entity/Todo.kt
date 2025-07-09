@@ -33,14 +33,12 @@ class Todo(
 
 ) : BaseEntity() {
 
-    // 읽기 전용 접근자
     fun getId(): Long = this.id
     fun getTitle(): String = this.title
     fun getContent(): String? = this.content
     fun getTodoStatus(): TodoStatus = this.todoStatus
     fun getPriority(): Priority = this.priority
 
-    // 비즈니스 로직
     fun updateTitle(newTitle: String) {
         require(newTitle.isNotBlank()) { "제목은 비어있을 수 없습니다" }
         this.title = newTitle

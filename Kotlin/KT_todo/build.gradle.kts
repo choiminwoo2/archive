@@ -58,6 +58,12 @@ allOpen {
     annotation("jakarta.persistence.Embeddable")
 }
 
+tasks.test {
+    jvmArgs("-XX:+EnableDynamicAgentLoading")
+}
+
+
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }
