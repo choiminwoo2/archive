@@ -4,14 +4,20 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.BDDMockito
+import org.mockito.junit.jupiter.MockitoSettings
+import org.ruu.kt.todo.config.RestDocTest
 import org.ruu.kt.todo.todos.controller.TodoController
 import org.ruu.kt.todo.todos.dto.TodoDTO
 import org.ruu.kt.todo.todos.enum.Priority
 import org.ruu.kt.todo.todos.enum.TodoStatus
 import org.ruu.kt.todo.todos.service.TodoService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+import org.springframework.boot.info.BuildProperties
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.restdocs.RestDocumentationContextProvider
 import org.springframework.restdocs.RestDocumentationExtension
 import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation
@@ -22,14 +28,18 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
+import org.springframework.test.web.servlet.setup.DefaultMockMvcBuilder
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.web.context.WebApplicationContext
 
-@WebMvcTest(TodoController::class)
-@AutoConfigureRestDocs
+@WebMvcTest(
+    controllers = [TodoController::class]
+)
 @ExtendWith(RestDocumentationExtension::class, SpringExtension::class)
-class TodoControllerDocsTest {    @Autowired
+@RestDocTest
+class TodoControllerDocsTest {
 
+    @Autowired
     lateinit var mockMvc: MockMvc
 
     @MockitoBean
@@ -41,9 +51,9 @@ class TodoControllerDocsTest {    @Autowired
         restDocumentation: RestDocumentationContextProvider
     ) {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
-            .apply {
+            .apply<DefaultMockMvcBuilder>(
                 MockMvcRestDocumentation.documentationConfiguration(restDocumentation)
-            }
+            )
             .build()
     }
 
