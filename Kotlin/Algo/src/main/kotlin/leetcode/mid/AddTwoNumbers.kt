@@ -31,8 +31,6 @@ class AddTwoNumbers {
             l2CurrentNode = l2CurrentNode?.next
         }
 
-
-
         return dummy.next
     }
 }
